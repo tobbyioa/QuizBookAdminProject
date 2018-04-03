@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "dnx451": {
+      "bin": {
+        "assembly": "../../bin/Recaptcha.dll",
+        "pdb": "../../bin/Recaptcha.pdb"
+      },
+      "dependencies": {
+        "System.Web.Mvc": "1.0.0-*"
+      }
+    }
+  }
+}

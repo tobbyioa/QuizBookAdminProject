@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FidelityEquiz.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FidelityEquiz_FICAAS_FICAAS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://fid-se:4343/earth/ficaas.asmx</Value>
+    </Setting>
+    <Setting Name="FidelityEquiz_EmailService_EmailService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://fid-se:4343/earth/EmailService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

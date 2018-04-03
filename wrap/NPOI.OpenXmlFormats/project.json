@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "dnx451": {
+      "bin": {
+        "assembly": "../../bin/NPOI.OpenXmlFormats.dll"
+      },
+      "dependencies": {
+        "NPOI.OpenXml4Net": "1.0.0-*"
+      }
+    }
+  }
+}

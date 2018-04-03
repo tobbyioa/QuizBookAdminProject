@@ -1,0 +1,49 @@
+﻿body {
+
+            font-size:9pt;
+            font-family:'Varela Round';
+            background-color:#fafafa;
+
+
+		background-attachment: fixed;
+		background-image: url(../Content/images/intro.svg);
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+}
+
+#mainTable{
+    margin:0 auto;
+    margin-top:5%;
+    text-align:center;
+
+
+}
+
+.headFont{
+    font-weight:900;
+    font-size:20pt;
+}
+
+#mainHeader{
+    padding-left:20px;
+    padding:10px 10px 10px 20px; border-bottom:1px solid #FFFFFF;
+}
+.welogout{
+    text-align:right;
+    font-size:9pt;
+    font-weight:800;
+}
+.hey{
+		background-attachment: fixed;
+		background-image: url(../Content/images/intro.svg);
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+        /*url("images/intro.svg")*/
+}
+
+
+
+
+

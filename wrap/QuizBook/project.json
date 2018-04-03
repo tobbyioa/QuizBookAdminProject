@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "dnx451": {
+      "bin": {
+        "assembly": "../../bin/QuizBook.dll",
+        "pdb": "../../bin/QuizBook.pdb"
+      },
+      "dependencies": {
+        "EntityFramework": "1.0.0-*",
+        "Microsoft.ReportViewer.WebForms": "1.0.0-*",
+        "Recaptcha": "1.0.0-*",
+        "SimpleExcelImport": "1.0.0-*"
+      }
+    }
+  }
+}

@@ -1,0 +1,303 @@
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.headFont{
+    font-weight:900;
+    font-size:20pt;
+}
+
+#mainHeader{
+    padding-left:20px;
+}
+
+.btnstyle
+        {
+            font-size:9pt;
+            font-weight:bold;
+    width: auto;
+}
+.btnstyle2
+        {
+            font-size:7pt;
+            font-weight:bold;
+    width: auto;
+}
+.selectionMiniDropDown
+{
+	width: 50px;
+	font-weight:bold;
+}
+
+   input[type="radio"]
+    {
+        width:auto;
+    }
+    input[type="checkbox"]
+    {
+        width:auto;
+    }
+        
+         .questStyle
+        {
+            width:100%;
+        }
+        .questionStyle
+        {
+            width:100%;
+            font-size:9pt;
+            font-family:Calibri;
+        }
+         .preambleStyle
+        {
+            width:100%;
+            font-size:11pt;
+            font-family:Calibri;
+        }
+        .AnswerStyle
+        {
+            width:100%;
+            font-size:9pt;
+            font-family:Calibri;
+        }
+.mygrid 
+{
+    padding-top: 200px;
+	font: 10pt calibri;
+	border-collapse: collapse;
+	width:100% ;
+    margin: 0 auto;
+  /*  border-right:  1px solid #FB7A31;
+	border-left: 1px solid #FB7A31;
+	border-bottom: 1px solid #FB7A31;*/
+	}
+
+th {
+    text-align: center;
+    font-size: 10pt;
+    font-weight: bolder;
+	}
+
+body {
+    font-size: 10pt;  
+    text-decoration:none;
+            font-family:'Varela Round';
+            background-color:#FAFAFA;
+    
+}
+.textArea
+{
+    overflow-x:auto;
+    overflow-y:auto;
+}
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.nounderline
+{
+    text-decoration:none;
+    font-size:9pt;
+    font-weight:bold;
+}
+input,textarea,select{
+    font-size: 8.5pt;
+    font-family: cambria;
+    
+    padding: 3px; 
+
+    background: #fff; 
+   
+    color: #555; 
+    border: 3px #ddd solid;
+    
+    /* -- CSS3 Shadow - create a shadow around each input element -- */ 
+-webkit-box-shadow: 0px 0px 4px #aaa;
+-moz-box-shadow: 0px 0px 4px #aaa; 
+box-shadow: 0px 0px 4px #aaa;
+ 
+/* -- CSS3 Transition - define what the transition will be applied to (i.e. the background) -- */		
+-webkit-transition: background 0.3s linear;
+    font-weight: 700;
+}
+
+.inforounded 
+{
+   behavior:url(images/border-radius.htc);
+   -moz-border-radius: 7px;
+   -webkit-border-radius: 7px;
+   
+   border-radius:7px;
+    -khtml-border-radius: 7px;
+     /*-moz-box-shadow:inset 0 0 10px #CDEFEC;
+   -webkit-box-shadow:inset 0 0 10px #CDEFEC;
+   box-shadow:inset 0 0 10px #CDEFEC;*/
+   
+}
+
+input:hover, textarea:hover { 
+    background: #eee; 
+}
+
+div.ui-datepicker{
+ font-size:8.5pt;
+}
+
+.inputCSS{
+width:200px;
+font-size:medium;
+font-family:Calibri;
+font-size:9pt;
+}
+
+.inputCSS2{
+width:200px;
+}
+
+.moneyInputCSS{
+width:100px;
+font-weight:bolder;
+}
+
+#note{
+	/* --color: #666666;padding: 4px; -- */
+	color:Red;
+	font-size: 12px;
+	font-style:italic;
+	font-weight:bold;
+	
+	margin: 0 auto;
+	text-align: center;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+	width: 400px;
+}
+
+
+
+.fidelity-grid-theme2 {
+	margin:0px;padding:0px;
+	width:100%;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:5px;
+	-webkit-border-bottom-left-radius:5px;
+	border-bottom-left-radius:5px;
+	
+	-moz-border-radius-bottomright:5px;
+	-webkit-border-bottom-right-radius:5px;
+	border-bottom-right-radius:5px;
+	
+	-moz-border-radius-topright:5px;
+	-webkit-border-top-right-radius:5px;
+	border-top-right-radius:5px;
+	
+	-moz-border-radius-topleft:5px;
+	-webkit-border-top-left-radius:5px;
+	border-top-left-radius:5px;
+}.fidelity-grid-theme2 table{
+	border-collapse: collapse;
+		border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}.fidelity-grid-theme2 tr:last-child td:last-child {
+	-moz-border-radius-bottomright:5px;
+	-webkit-border-bottom-right-radius:5px;
+	border-bottom-right-radius:5px;
+}
+.fidelity-grid-theme2 table tr:first-child td:first-child {
+	-moz-border-radius-topleft:5px;
+	-webkit-border-top-left-radius:5px;
+	border-top-left-radius:5px;
+}
+.fidelity-grid-theme2 table tr:first-child td:last-child {
+	-moz-border-radius-topright:5px;
+	-webkit-border-top-right-radius:5px;
+	border-top-right-radius:5px;
+}.fidelity-grid-theme2 tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:5px;
+	-webkit-border-bottom-left-radius:5px;
+	border-bottom-left-radius:5px;
+}.fidelity-grid-theme2 tr:hover td{
+	background-color:#ffffff;
+		
+
+}
+.fidelity-grid-theme2 td{
+	vertical-align:middle;
+	
+	background-color:#d4ffaa;
+
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:2px;
+	font-size:8pt;
+	font-family:Calibri;
+	font-weight:normal;
+	color:#000000;
+}.fidelity-grid-theme2 tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.fidelity-grid-theme2 tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.fidelity-grid-theme2 tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.fidelity-grid-theme2 tr:first-child td{
+		background:-o-linear-gradient(bottom, #5fbf00 5%, #3f7f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5fbf00), color-stop(1, #3f7f00) );
+	background:-moz-linear-gradient( center top, #5fbf00 5%, #3f7f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#5fbf00", endColorstr="#3f7f00");	background: -o-linear-gradient(top,#5fbf00,3f7f00);
+
+	background-color:#5fbf00;
+	border:0px solid #000000;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:8pt;
+	font-family:Calibri;
+	font-weight:bold;
+	color:#ffffff;
+   
+}
+.fidelity-grid-theme2 tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #5fbf00 5%, #3f7f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5fbf00), color-stop(1, #3f7f00) );
+	background:-moz-linear-gradient( center top, #5fbf00 5%, #3f7f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#5fbf00", endColorstr="#3f7f00");	background: -o-linear-gradient(top,#5fbf00,3f7f00);
+
+	background-color:#5fbf00;
+}
+.fidelity-grid-theme2 tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.fidelity-grid-theme2 tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
+
+.pagination {
+	text-align: center;
+	margin: 15px auto;
+}
+.pagination .current
+{
+	background-color: #FFFF66;
+	border-radius: 5px;
+	color: blue;
+	padding: 4px 8px;
+}
+
+.pagination a
+ {
+	background-color: #FFFFFF;
+	border: 1px solid #86B5EE;
+	border-radius: 5px;
+	padding: 3px 7px 4px;    
+	color: #61ACEA;
+	text-decoration: none;
+}
+
+.pagination a:hover 
+{
+	background-color:#FBEFBD;
+}

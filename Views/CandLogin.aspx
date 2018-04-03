@@ -1,0 +1,123 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/OuterPage.Master" AutoEventWireup="true" CodeBehind="CandLogin.aspx.cs" Inherits="QuizBook.Views.CandLogin" %>
+<%@ MasterType VirtualPath="~/Views/OuterPage.Master" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">  
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript">
+        $(function () {
+            $("#resetBtn").click(function () {
+                var val = $('#<%=QG.ClientID %>').val()
+               
+                 $.ajax({
+                     type: "POST",
+                     url: "CandLogin.aspx/ResetMth",
+                     data: "{ 'name':'" + val + "'}",
+                     contentType: "application/json; charset=utf-8",
+                     error: function (xhr, ajaxOptions, thrownError) {
+                         alert(xhr.statusText);
+                         alert(thrownError);
+                     },
+                     success: function (data) {
+                         //  alert(data);
+                         if (data.d == "success") {
+
+                             $('#<%=msg.ClientID %>').html("Password reset successful. A password has been sent to your registered email.")
+                            //alert();
+                            //location.href = "QuestionsList.aspx";
+                        } else if (data.d == "exist") {
+                            $('#<%=msg.ClientID %>').html("There is an issue resetting your password. Kindly retry later of contact the Administrator.")
+                            // alert("");
+                        } else {
+                            $('#<%=msg.ClientID %>').html(data.d)
+                            // alert();
+                        }
+                    }
+
+                });
+             });
+        });
+    </script>
+    <div id="mainTable" class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-sm-4 col-md-4">&nbsp;</div>
+            <div id="loginHeader" class="col-sm-4 col-md-4 headFont">Candidate Login</div>
+            <div class="col-sm-4 col-md-4">&nbsp;</div>
+        </div>
+            <div class="col-sm-12 col-md-12">&nbsp;<asp:Label ID="lblAlert" runat="server" Style="color: #666666; font-weight: 700; font-size: small" Text=""></asp:Label></div>
+        <div class="col-sm-12 col-md-12">
+
+            <table class="table table-striped">
+            <tr>
+                <td>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                &nbsp;
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <div class="form-group">
+                    <asp:TextBox ID="username" runat="server" CssClass="form-control" placeholder="Username" required></asp:TextBox>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">&nbsp;</div>
+                <div class="form-group">
+                    <asp:TextBox ID="password" runat="server" TextMode="Password" type="password" data-minlength="6" data-match-error="Minimum of 6 character length" CssClass="form-control" placeholder="Password" required></asp:TextBox>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" />
+                        Remember Me
+                    </label>
+                </div>
+                <asp:Button ID="loginBtn" runat="server" class="btn btn-default" Text="Proceed" OnClick="loginBtn_Click" />
+                <div class="etc-login-form">
+                    <br />
+				<p>forgot your password? <a href="#" data-toggle="modal" data-target="#addpane">click here</a></p>
+				<p>new user? <a href="CandidateReg.aspx">Kindly Register</a></p>
+			</div>
+                <div class="form-group">
+
+                    </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">&nbsp;</div>
+                    </td>
+            </tr>
+        </table>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="addpane" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Reset your password</h4>
+      </div>
+      <div class="modal-body">
+          <script type="text/javascript">
+              $(function () {
+
+              });
+          </script>
+        <%--<table>--%>
+           <%-- <tr><td style="font-weight:bold;">Username or Email</td><td class="auto-style1">--%>
+             <div class="row">
+                 <div class="form-group" style="padding:10px;">
+                <asp:TextBox ID="QG" runat="server" style="" CssClass="form-control" placeholder="Username or Email" ></asp:TextBox><asp:HiddenField ID="uEmail" runat="server" />
+                     <asp:Label ID="msg" runat="server" Text=""></asp:Label>
+                     </div>
+                 </div>
+                
+<%--                     </td>
+                
+                <td class="auto-style1">&nbsp</td>
+            </tr>--%>
+        <%--</table>--%>
+          </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="resetBtn" class="btn btn-primary">Reset</button>
+      </div>
+    </div>
+                </div>
+            </div>
+</asp:Content>

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "dnx451": {
+      "bin": {
+        "assembly": "../../bin/SimpleExcelImport.dll",
+        "pdb": "../../bin/SimpleExcelImport.pdb"
+      },
+      "dependencies": {
+        "NPOI": "1.0.0-*",
+        "NPOI.OOXML": "1.0.0-*"
+      }
+    }
+  }
+}

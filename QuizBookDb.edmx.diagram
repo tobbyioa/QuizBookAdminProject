@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="95aaf7915edb45b79d9a44972c4d6099" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="QuizBookDbModel.AuditRecordField" Width="1.5" PointX="16" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.AuditRecord" Width="1.5" PointX="13.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.BatchConfigurationTemp" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.BatchScopeContent" Width="1.5" PointX="11" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.branch_tab" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.division_tab" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.grade_tab" Width="1.5" PointX="0.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.Permission" Width="1.5" PointX="13.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.region_tab" Width="1.5" PointX="0.75" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.RolePermission" Width="1.5" PointX="16" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.Role" Width="1.5" PointX="10.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.sector_tab" Width="1.5" PointX="0.75" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_BackGQuestions" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_BackGQuestnGroups" Width="1.5" PointX="7.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_BackGroundQuestAnswers" Width="1.5" PointX="10.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_Batch" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_BatchQuestions" Width="1.5" PointX="11.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_BatchSet" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_Candidate" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_CandidateAnswers" Width="1.5" PointX="8.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_CandidateTemp" Width="1.5" PointX="8.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_CTestTracker" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_EssayQuestions" Width="1.5" PointX="15.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_MultiintelligencQuizBookDb" Width="1.5" PointX="17.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_Option" Width="1.5" PointX="8.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_QOptionType" Width="1.5" PointX="3.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_Question" Width="1.5" PointX="6" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_QuestionsPreambles" Width="1.5" PointX="12.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_QuestionType" Width="1.5" PointX="3.75" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_Reports" Width="1.5" PointX="8.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_Settings" Width="1.5" PointX="14.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.T_Summary" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.Tenant" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.ActiveQuestions_vw" Width="1.5" PointX="16.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.AllCandidates_vw" Width="1.5" PointX="18.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.AuditTrailView" Width="1.5" PointX="18.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.InactiveQuestions_vw" Width="1.5" PointX="18.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizBookDbModel.Questions_vw" Width="1.5" PointX="19.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="QuizBookDbModel.FK_AuditRecordFields_AuditRecords" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_BatchScopeContent_T_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_BatchScopeContent_T_QuestionType" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Candidate_branch_tab" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Candidate_division_tab" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_grade_tab_grade_tab" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Candidate_grade_tab" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_RolePermissions_Permissions" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Candidate_region_tab" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_RolePermissions_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Candidate_sector_tab" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_BatchQuestions_T_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_BatchSet_T_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_CandidateAnswers_T_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_CandidateTemp_T_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_CTestTracker_T_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Reports_T_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Summary_T_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_BatchQuestions_T_BatchQuestions" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_BatchQuestions_T_Question" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_BatchSet_T_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_CandidateAnswers_T_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_CandidateTemp_T_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_CTestTracker_T_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Reports_T_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Summary_T_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Option_T_Question" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Question_T_QOptionType" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Question_T_QuestionType" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Reports_T_Question" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QuizBookDbModel.Candidate" Width="1.5" PointX="11.068682977496033" PointY="13.250792628736605" />
+        <AssociationConnector Association="QuizBookDbModel.FK_Candidates_Roles" />
+        <AssociationConnector Association="QuizBookDbModel.FK_Candidates_Tenant" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_CTestTracker_T_Candidate1" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Question_Tenant" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_QuestionType_Tenant" />
+        <EntityTypeShape EntityType="QuizBookDbModel.AllMyCandidate" Width="1.5" PointX="4.40605050716831" PointY="15.104742474437106" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Batch_Tenant" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_CandidateAnswers_T_Candidate1" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_CandidateTemp_T_Candidate1" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_Summary_T_Candidate1" />
+        <AssociationConnector Association="QuizBookDbModel.FK_T_CandidateAnswers_T_Question" />
+        <EntityTypeShape EntityType="QuizBookDbModel.TestReportAnswer" Width="1.5" PointX="15.625" PointY="1.25" />
+        <EntityTypeShape EntityType="QuizBookDbModel.TestResultReport" Width="1.5" PointX="13.375" PointY="4.625" />
+        <AssociationConnector Association="QuizBookDbModel.FK_TestResultReport_Candidates" />
+        <AssociationConnector Association="QuizBookDbModel.FK_TestResultReport_T_Batch" />
+        <AssociationConnector Association="QuizBookDbModel.FK_TestResultReport_Tenant" />
+        <AssociationConnector Association="QuizBookDbModel.FK_TestReportAnswer_TestResultReport" />
+        <EntityTypeShape EntityType="QuizBookDbModel.TestReportSummary" Width="1.5" PointX="15.625" PointY="24.125" />
+        <AssociationConnector Association="QuizBookDbModel.FK_TestReportSummary_TestResultReport" />
+        <EntityTypeShape EntityType="QuizBookDbModel.AdminUser" Width="1.5" PointX="13" PointY="0.75" />
+        <AssociationConnector Association="QuizBookDbModel.FK_AdminUsers_Roles" />
+        <AssociationConnector Association="QuizBookDbModel.FK_AdminUsers_Tenant" />
+        <AssociationConnector Association="QuizBookDbModel.FK_Candidates_Roles1" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

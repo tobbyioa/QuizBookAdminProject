@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="OuterPage.master.cs" Inherits="QuizBook.Views.OuterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <script src="../Scripts/jquery-1.11.1.js" type="text/javascript"></script>
+    <script src="../Scripts/moment.js" type="text/javascript"></script>
+    <script src="../Scripts/bootstrap.js" type="text/javascript"></script>
+    <script src="../Scripts/bootstrap-show-password.js" type="text/javascript"></script>
+    <script src="../Scripts/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="../Scripts/validator.js"  type="text/javascript" ></script>
+    <script src="../Scripts/jquery.crs.js"  type="text/javascript"></script>
+   <%-- <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css' />--%>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/bootstrap-datetimepicker.css" rel="stylesheet" type='text/css' />
+    <link href="../Content/QuizBookFont.css" rel="stylesheet" type='text/css' />
+    <link href="../Content/loginStyle.css" rel="stylesheet" type='text/css' />
+
+    <title>QuizBook</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <script type="text/javascript">
+    </script>
+    <form id="form1" runat="server" role="form" data-toggle="validator">
+    <div class="clearfix">
+        <div id="mainHeader" class="clearfix headFont"  >
+            <div class="col-xs-9 col-sm-9 col-md-9">QuizBook
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/book.png" Height="30px" Width="39px" /></div> <div class="col-xs-3 col-sm-3 col-md-3" style="text-align:right;"><asp:Image ID="tenantImg" runat="server" Height="30px" Width="39px" /><asp:Label ID="tenantName" runat="server" Text="" ></asp:Label></div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+</body>
+</html>

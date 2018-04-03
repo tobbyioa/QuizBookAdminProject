@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://fidelitybankplc.com/emailservice" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://fidelitybankplc.com/emailservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://fidelitybankplc.com/emailservice">
+      <s:element name="RegisterEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderemail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recieveremails" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegisterEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterSmsAsap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="recipient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterSmsAsapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegisterSmsAsapResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterProcessEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderemail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recieveremails" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterProcessEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegisterProcessEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegisterEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterEmail" />
+  </wsdl:message>
+  <wsdl:message name="RegisterEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSmsAsapSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterSmsAsap" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSmsAsapSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterSmsAsapResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterProcessEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterProcessEmail" />
+  </wsdl:message>
+  <wsdl:message name="RegisterProcessEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterProcessEmailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EmailServiceSoap">
+    <wsdl:operation name="RegisterEmail">
+      <wsdl:input message="tns:RegisterEmailSoapIn" />
+      <wsdl:output message="tns:RegisterEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSmsAsap">
+      <wsdl:input message="tns:RegisterSmsAsapSoapIn" />
+      <wsdl:output message="tns:RegisterSmsAsapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterProcessEmail">
+      <wsdl:input message="tns:RegisterProcessEmailSoapIn" />
+      <wsdl:output message="tns:RegisterProcessEmailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EmailServiceSoap" type="tns:EmailServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterEmail">
+      <soap:operation soapAction="http://fidelitybankplc.com/emailservice/RegisterEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSmsAsap">
+      <soap:operation soapAction="http://fidelitybankplc.com/emailservice/RegisterSmsAsap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterProcessEmail">
+      <soap:operation soapAction="http://fidelitybankplc.com/emailservice/RegisterProcessEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmailServiceSoap12" type="tns:EmailServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterEmail">
+      <soap12:operation soapAction="http://fidelitybankplc.com/emailservice/RegisterEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterSmsAsap">
+      <soap12:operation soapAction="http://fidelitybankplc.com/emailservice/RegisterSmsAsap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterProcessEmail">
+      <soap12:operation soapAction="http://fidelitybankplc.com/emailservice/RegisterProcessEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmailService">
+    <wsdl:port name="EmailServiceSoap" binding="tns:EmailServiceSoap">
+      <soap:address location="https://fid-se:4343/earth/EmailService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmailServiceSoap12" binding="tns:EmailServiceSoap12">
+      <soap12:address location="https://fid-se:4343/earth/EmailService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

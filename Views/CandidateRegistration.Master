@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CandidateRegistration.master.cs" Inherits="QuizBook.Views.CandidateRegistration" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+      <link href="../Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/demo_page.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/demo_table.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/demo_table_jui.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/YahooGridView.css" rel="stylesheet" type="text/css" />
+     <%--<link href="../Content/QuizBookFont.css" rel="stylesheet" type='text/css'/>--%>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css' />
+    <link href="../Content/loginStyle.css" rel="stylesheet" type='text/css' />
+    
+    <script type="text/javascript">
+        $(function () {
+            var icons = {
+                header: "ui-icon-circle-arrow-e",
+                headerSelected: "ui-icon-circle-arrow-s"
+            };
+            $(".btnstyle").button();
+            $(".btnstyle2").button();
+            
+            $("#lout").button();
+            $("#accordion").accordion({
+                collapsible: true,
+                navigation: true,
+                fillSpace: true,
+                icons: icons
+            });
+        });
+    </script>
+    <title>QuizBook</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color:#CDEFEC">
+<div id="mainHeader" class="row headFont">
+            <div class="col-xs-12 col-sm-12 col-md-12">QuizBook
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/book.png" Height="30px" Width="39px" /></div>
+</div>
+
+<div style="width: 80%; margin:0 auto;text-align:right;  font-weight:800;">
+      <asp:Label ID="wlcmLbl" runat="server" Text=""></asp:Label><a 
+          href="Logout.aspx" style="text-decoration:none; color:Black;">&nbsp;&nbsp;<span id="lout" style="font-style:italic;font-size:9pt;">Logout</span></a></div>
+
+    <form id="form1" runat="server">
+    <div id="accordion" style="width:80%; height:auto;margin:0 auto; font-size:8pt;">
+	<h3><a href="#" style=" font-weight:bold;">Registration Profile</a></h3>
+        <div style=" margin:0 auto;height:auto;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+    <%--<script src="../Scripts/jquery-1.6.4.js" type="text/javascript"></script>--%>
+    <%--<script src="../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>--%>
+    <%--<script src="../Scripts/jquery-1.8.0.js" type="text/javascript"></script>--%>
+    <script src="../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../Scripts/bootstrap.js" type="text/javascript"></script>
+    <script src="../Scripts/bootstrap-show-password.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+    <link href="../Content/fidelity-theme/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+     <script src="../Content/tiny_mce/jquery.tinymce.js" type="text/javascript"></script>
+    <script src="../Content/tiny_mce/tiny_mce.js" type="text/javascript"></script>
+    <script src="../Scripts/Site.js" type="text/javascript"></script>
+</body>
+</html>

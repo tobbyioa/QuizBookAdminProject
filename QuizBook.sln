@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizBook", "QuizBook.csproj", "{804C89BD-1D0A-4F6A-A1F2-ED20DE0458F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizBookPro", "..\QuizBookPro\QuizBookPro.csproj", "{D38EA721-2A1B-4410-9BE9-F3956D9DA72D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{804C89BD-1D0A-4F6A-A1F2-ED20DE0458F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804C89BD-1D0A-4F6A-A1F2-ED20DE0458F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804C89BD-1D0A-4F6A-A1F2-ED20DE0458F4}.Debug|x86.ActiveCfg = Release|x86
+		{804C89BD-1D0A-4F6A-A1F2-ED20DE0458F4}.Debug|x86.Build.0 = Release|x86
+		{804C89BD-1D0A-4F6A-A1F2-ED20DE0458F4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{804C89BD-1D0A-4F6A-A1F2-ED20DE0458F4}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{804C89BD-1D0A-4F6A-A1F2-ED20DE0458F4}.Release|x86.ActiveCfg = Release|x86
+		{804C89BD-1D0A-4F6A-A1F2-ED20DE0458F4}.Release|x86.Build.0 = Release|x86
+		{D38EA721-2A1B-4410-9BE9-F3956D9DA72D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D38EA721-2A1B-4410-9BE9-F3956D9DA72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D38EA721-2A1B-4410-9BE9-F3956D9DA72D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D38EA721-2A1B-4410-9BE9-F3956D9DA72D}.Debug|x86.Build.0 = Debug|Any CPU
+		{D38EA721-2A1B-4410-9BE9-F3956D9DA72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D38EA721-2A1B-4410-9BE9-F3956D9DA72D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D38EA721-2A1B-4410-9BE9-F3956D9DA72D}.Release|x86.ActiveCfg = Release|Any CPU
+		{D38EA721-2A1B-4410-9BE9-F3956D9DA72D}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://webaholics.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = QuizBook.csproj
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ..\\QuizBookPro\\QuizBookPro.csproj
+		SccProjectName2 = ../QuizBookPro
+		SccLocalPath2 = ..\\QuizBookPro
+	EndGlobalSection
+EndGlobal

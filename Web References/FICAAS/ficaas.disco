@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://fid-se:4343/earth/ficaas.asmx?wsdl" docRef="https://fid-se:4343/earth/ficaas.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://fid-se:4343/earth/ficaas.asmx" xmlns:q1="http://fidelitybankplc.com/ficaas" binding="q1:FICAASSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://fid-se:4343/earth/ficaas.asmx" xmlns:q2="http://fidelitybankplc.com/ficaas" binding="q2:FICAASSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

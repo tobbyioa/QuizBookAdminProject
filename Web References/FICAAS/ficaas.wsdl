@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://fidelitybankplc.com/ficaas" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://fidelitybankplc.com/ficaas" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://fidelitybankplc.com/ficaas">
+      <s:element name="FetchSessionToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logintoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchSessionTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchSessionTokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAppSessionToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logintoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAppSessionTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchAppSessionTokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FetchUserIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUserRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUserRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchUserRolesResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FetchUserPermissions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUserPermissionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchUserPermissionsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogoutUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogoutUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLastActivityTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pageurl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLastActivityTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateLastActivityTimeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUserData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUserDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchUserDataResult" type="tns:UserData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StaffId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LowerUsername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtherName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BranchId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FetchUserDataByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUserDataByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchUserDataByUserIdResult" type="tns:UserData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAllUserData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicationCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAllUserDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchAllUserDataResult" type="tns:ArrayOfUserData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserData" nillable="true" type="tns:UserData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SearchActiveDirectory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="criteria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchActiveDirectoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchActiveDirectoryResult" type="tns:ArrayOfADUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfADUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ADUser" nillable="true" type="tns:ADUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ADUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Alias" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FetchUserAttributes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUserAttributesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchUserAttributesResult" type="tns:ArrayOfAttr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAttr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Attr" nillable="true" type="tns:Attr" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Attr">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttrName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttrCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User_Attributes" type="tns:ArrayOfUser_Attribute" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUser_Attribute">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="User_Attribute" nillable="true" type="tns:User_Attribute" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="User_Attribute">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AttributeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsApproved" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApprovedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApprovedDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserInfo" type="tns:UserInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attr" type="tns:Attr" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StaffId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LowerUsername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Othernames" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sol" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FirstLogin" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastActivityTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordReseted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordExpiration" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordAttemptCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedIP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxIdleTime" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SecurityLevel" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsEarthManager" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPLogs" type="tns:ArrayOfIPLog" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserRoles" type="tns:ArrayOfUserRole" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserRoles1" type="tns:ArrayOfUserRole" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserActivityLogs" type="tns:ArrayOfUserActivityLog" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkTasks" type="tns:ArrayOfWorkTask" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkItems" type="tns:ArrayOfWorkItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserLoggedApps" type="tns:ArrayOfUserLoggedApp" />
+          <s:element minOccurs="0" maxOccurs="1" name="User_Attributes" type="tns:ArrayOfUser_Attribute" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIPLog">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IPLog" nillable="true" type="tns:IPLog" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IPLog">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLoginTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="App" type="tns:App" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserInfo" type="tns:UserInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="App">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppLogoUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPLogs" type="tns:ArrayOfIPLog" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoginRequests" type="tns:ArrayOfLoginRequest" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppPermissions" type="tns:ArrayOfAppPermission" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppRoles" type="tns:ArrayOfAppRole" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserRoles" type="tns:ArrayOfUserRole" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserActivityLogs" type="tns:ArrayOfUserActivityLog" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserLoggedApps" type="tns:ArrayOfUserLoggedApp" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLoginRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LoginRequest" nillable="true" type="tns:LoginRequest" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LoginRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsUsed" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="App" type="tns:App" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAppPermission">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AppPermission" nillable="true" type="tns:AppPermission" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AppPermission">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PermissionId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PermissionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="App" type="tns:App" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAppRole">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AppRole" nillable="true" type="tns:AppRole" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AppRole">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RoleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RolePermissions" type="tns:ArrayOfRolePermission" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserRoles" type="tns:ArrayOfUserRole" />
+          <s:element minOccurs="0" maxOccurs="1" name="App" type="tns:App" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRolePermission">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RolePermission" nillable="true" type="tns:RolePermission" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RolePermission">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RoleId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PermissionId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppRole" type="tns:AppRole" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUserRole">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserRole" nillable="true" type="tns:UserRole" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserRole">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RoleId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="App" type="tns:App" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppRole" type="tns:AppRole" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserInfo" type="tns:UserInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserInfo1" type="tns:UserInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUserActivityLog">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserActivityLog" nillable="true" type="tns:UserActivityLog" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserActivityLog">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateStamp" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PageUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Appcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="App" type="tns:App" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserInfo" type="tns:UserInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUserLoggedApp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserLoggedApp" nillable="true" type="tns:UserLoggedApp" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserLoggedApp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthenticationToken" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsUsed" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoginTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SessionToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="App" type="tns:App" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserInfo" type="tns:UserInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWorkTask">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WorkTask" nillable="true" type="tns:WorkTask" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WorkTask">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkItemId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Seen" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SeenTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="GeneratedTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkItem" type="tns:WorkItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserInfo" type="tns:UserInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WorkItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkItemId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkflowId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentStep" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="lastupdated" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasRan" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Runtime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId_Created" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkTasks" type="tns:ArrayOfWorkTask" />
+          <s:element minOccurs="0" maxOccurs="1" name="Workflow" type="tns:Workflow" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserInfo" type="tns:UserInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Workflow">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Workflowtype" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Priority" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastRan" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkItems" type="tns:ArrayOfWorkItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkflowRules" type="tns:ArrayOfWorkflowRule" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWorkItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WorkItem" nillable="true" type="tns:WorkItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWorkflowRule">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WorkflowRule" nillable="true" type="tns:WorkflowRule" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WorkflowRule">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkFlowId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RuleScopeType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ScopeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActionId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnAcceptNextStep" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnRejectNextStep" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnIgnoreNextStep" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnExpireNextStep" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpireTimeStamp" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="RuleStep" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Template" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Workflow" type="tns:Workflow" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FetchTSDsByBranchId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchTSDsByBranchIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchTSDsByBranchIdResult" type="tns:ArrayOfUserData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchTSDHeadByBranchId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchTSDHeadByBranchIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchTSDHeadByBranchIdResult" type="tns:ArrayOfUserData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUserByAttr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attrCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchUserByAttrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchUserByAttrResult" type="tns:ArrayOfUserData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FetchSessionTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchSessionToken" />
+  </wsdl:message>
+  <wsdl:message name="FetchSessionTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchSessionTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchAppSessionTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchAppSessionToken" />
+  </wsdl:message>
+  <wsdl:message name="FetchAppSessionTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchAppSessionTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchUserId" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserPermissionsSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchUserPermissions" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserPermissionsSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchUserPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutUserSoapIn">
+    <wsdl:part name="parameters" element="tns:LogoutUser" />
+  </wsdl:message>
+  <wsdl:message name="LogoutUserSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLastActivityTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLastActivityTime" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLastActivityTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLastActivityTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserDataSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchUserData" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserDataSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserDataByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchUserDataByUserId" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserDataByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchUserDataByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchAllUserDataSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchAllUserData" />
+  </wsdl:message>
+  <wsdl:message name="FetchAllUserDataSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchAllUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchActiveDirectorySoapIn">
+    <wsdl:part name="parameters" element="tns:SearchActiveDirectory" />
+  </wsdl:message>
+  <wsdl:message name="SearchActiveDirectorySoapOut">
+    <wsdl:part name="parameters" element="tns:SearchActiveDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserAttributesSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchUserAttributes" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserAttributesSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchUserAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchTSDsByBranchIdSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchTSDsByBranchId" />
+  </wsdl:message>
+  <wsdl:message name="FetchTSDsByBranchIdSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchTSDsByBranchIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchTSDHeadByBranchIdSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchTSDHeadByBranchId" />
+  </wsdl:message>
+  <wsdl:message name="FetchTSDHeadByBranchIdSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchTSDHeadByBranchIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserByAttrSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchUserByAttr" />
+  </wsdl:message>
+  <wsdl:message name="FetchUserByAttrSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchUserByAttrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FICAASSoap">
+    <wsdl:operation name="FetchSessionToken">
+      <wsdl:input message="tns:FetchSessionTokenSoapIn" />
+      <wsdl:output message="tns:FetchSessionTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchAppSessionToken">
+      <wsdl:input message="tns:FetchAppSessionTokenSoapIn" />
+      <wsdl:output message="tns:FetchAppSessionTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserId">
+      <wsdl:input message="tns:FetchUserIdSoapIn" />
+      <wsdl:output message="tns:FetchUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserRoles">
+      <wsdl:input message="tns:FetchUserRolesSoapIn" />
+      <wsdl:output message="tns:FetchUserRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserPermissions">
+      <wsdl:input message="tns:FetchUserPermissionsSoapIn" />
+      <wsdl:output message="tns:FetchUserPermissionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <wsdl:input message="tns:LogoutUserSoapIn" />
+      <wsdl:output message="tns:LogoutUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastActivityTime">
+      <wsdl:input message="tns:UpdateLastActivityTimeSoapIn" />
+      <wsdl:output message="tns:UpdateLastActivityTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserData">
+      <wsdl:input message="tns:FetchUserDataSoapIn" />
+      <wsdl:output message="tns:FetchUserDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserDataByUserId">
+      <wsdl:input message="tns:FetchUserDataByUserIdSoapIn" />
+      <wsdl:output message="tns:FetchUserDataByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchAllUserData">
+      <wsdl:input message="tns:FetchAllUserDataSoapIn" />
+      <wsdl:output message="tns:FetchAllUserDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchActiveDirectory">
+      <wsdl:input message="tns:SearchActiveDirectorySoapIn" />
+      <wsdl:output message="tns:SearchActiveDirectorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserAttributes">
+      <wsdl:input message="tns:FetchUserAttributesSoapIn" />
+      <wsdl:output message="tns:FetchUserAttributesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchTSDsByBranchId">
+      <wsdl:input message="tns:FetchTSDsByBranchIdSoapIn" />
+      <wsdl:output message="tns:FetchTSDsByBranchIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchTSDHeadByBranchId">
+      <wsdl:input message="tns:FetchTSDHeadByBranchIdSoapIn" />
+      <wsdl:output message="tns:FetchTSDHeadByBranchIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserByAttr">
+      <wsdl:input message="tns:FetchUserByAttrSoapIn" />
+      <wsdl:output message="tns:FetchUserByAttrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FICAASSoap" type="tns:FICAASSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FetchSessionToken">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchSessionToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchAppSessionToken">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchAppSessionToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserId">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserRoles">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserPermissions">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/LogoutUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastActivityTime">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/UpdateLastActivityTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserData">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserDataByUserId">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserDataByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchAllUserData">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchAllUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchActiveDirectory">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/SearchActiveDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserAttributes">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserAttributes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchTSDsByBranchId">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchTSDsByBranchId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchTSDHeadByBranchId">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchTSDHeadByBranchId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserByAttr">
+      <soap:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserByAttr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FICAASSoap12" type="tns:FICAASSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FetchSessionToken">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchSessionToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchAppSessionToken">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchAppSessionToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserId">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserRoles">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserPermissions">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/LogoutUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLastActivityTime">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/UpdateLastActivityTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserData">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserDataByUserId">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserDataByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchAllUserData">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchAllUserData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchActiveDirectory">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/SearchActiveDirectory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserAttributes">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserAttributes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchTSDsByBranchId">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchTSDsByBranchId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchTSDHeadByBranchId">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchTSDHeadByBranchId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchUserByAttr">
+      <soap12:operation soapAction="http://fidelitybankplc.com/ficaas/FetchUserByAttr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FICAAS">
+    <wsdl:port name="FICAASSoap" binding="tns:FICAASSoap">
+      <soap:address location="https://fid-se:4343/earth/ficaas.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FICAASSoap12" binding="tns:FICAASSoap12">
+      <soap12:address location="https://fid-se:4343/earth/ficaas.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
